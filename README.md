@@ -1,15 +1,30 @@
+import { motion } from "framer-motion";
+
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
-      <header className="p-6 shadow-md bg-white">
+      <motion.header
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="p-6 shadow-md bg-white"
+      >
         <h1 className="text-3xl font-bold text-indigo-600">Estratega en Marketing & Ventas</h1>
         <p className="text-gray-600">Especialista en Redes Sociales y Crecimiento de Negocios</p>
-      </header>
+      </motion.header>
 
       {/* About Section */}
       <section className="max-w-5xl mx-auto p-8">
-        <h2 className="text-2xl font-semibold mb-4">👤 Sobre mí</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-4"
+        >
+          👤 Sobre mí
+        </motion.h2>
         <p>
           Soy un estratega en marketing y ventas con experiencia en la creación de
           campañas digitales que conectan con las emociones de los clientes y generan
@@ -20,7 +35,15 @@ export default function Portfolio() {
 
       {/* Skills Section */}
       <section className="max-w-5xl mx-auto p-8 bg-indigo-50 rounded-2xl my-6">
-        <h2 className="text-2xl font-semibold mb-4">🎯 Especialidades</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-4"
+        >
+          🎯 Especialidades
+        </motion.h2>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <li>✔️ Estrategias de marketing digital</li>
           <li>✔️ Embudos de conversión y ventas online</li>
@@ -33,7 +56,15 @@ export default function Portfolio() {
 
       {/* Results Section */}
       <section className="max-w-5xl mx-auto p-8">
-        <h2 className="text-2xl font-semibold mb-4">📈 Resultados Destacados</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-4"
+        >
+          📈 Resultados Destacados
+        </motion.h2>
         <ul className="space-y-2">
           <li>🚀 Aumento del 150% en ventas de e-commerce de moda en 6 meses.</li>
           <li>📊 Multiplicación por 4 de la facturación de un negocio local en 3 meses.</li>
@@ -44,7 +75,15 @@ export default function Portfolio() {
 
       {/* Tools */}
       <section className="max-w-5xl mx-auto p-8 bg-indigo-50 rounded-2xl my-6">
-        <h2 className="text-2xl font-semibold mb-4">🛠️ Herramientas</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-4"
+        >
+          🛠️ Herramientas
+        </motion.h2>
         <p>
           Meta Business Suite · Google Ads · Google Analytics · HubSpot · Canva · Photoshop · Notion · Trello
         </p>
@@ -52,35 +91,66 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <section className="max-w-5xl mx-auto p-8">
-        <h2 className="text-2xl font-semibold mb-6">📂 Proyectos Destacados</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-6"
+        >
+          📂 Proyectos Destacados
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white shadow-md rounded-2xl overflow-hidden">
-            <img src="https://via.placeholder.com/400x250" alt="Campaña Instagram" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">Campaña en Instagram</h3>
-              <p className="text-sm text-gray-600">Antes/Después: crecimiento en seguidores y engagement en marca de ropa.</p>
-            </div>
-          </div>
-          <div className="bg-white shadow-md rounded-2xl overflow-hidden">
-            <img src="https://via.placeholder.com/400x250" alt="Reel Viral" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">Reel Viral en TikTok</h3>
-              <p className="text-sm text-gray-600">Superó las 500K visualizaciones orgánicas con estrategia de storytelling.</p>
-            </div>
-          </div>
-          <div className="bg-white shadow-md rounded-2xl overflow-hidden">
-            <img src="https://via.placeholder.com/400x250" alt="Dashboard" className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">Dashboard de Ventas</h3>
-              <p className="text-sm text-gray-600">Reporte visual de crecimiento con métricas clave y ROI positivo.</p>
-            </div>
-          </div>
+          {[
+            {
+              title: "Campaña en Instagram",
+              desc: "Antes/Después: crecimiento en seguidores y engagement en marca de ropa.",
+              img: "https://via.placeholder.com/400x250",
+            },
+            {
+              title: "Reel Viral en TikTok",
+              desc: "Superó las 500K visualizaciones orgánicas con estrategia de storytelling.",
+              img: "https://via.placeholder.com/400x250",
+            },
+            {
+              title: "Dashboard de Ventas",
+              desc: "Reporte visual de crecimiento con métricas clave y ROI positivo.",
+              img: "https://via.placeholder.com/400x250",
+            },
+          ].map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white shadow-md rounded-2xl overflow-hidden"
+            >
+              <img
+                src={project.img}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-semibold text-lg">{project.title}</h3>
+                <p className="text-sm text-gray-600">{project.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* Contact */}
       <section className="max-w-5xl mx-auto p-8">
-        <h2 className="text-2xl font-semibold mb-4">📞 Contacto</h2>
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-4"
+        >
+          📞 Contacto
+        </motion.h2>
         <p>Email: <a href="mailto:tuemail@ejemplo.com" className="text-indigo-600">tuemail@ejemplo.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/57xxxxxxxxxx" className="text-indigo-600">+57 xxx xxx xxxx</a></p>
         <p>LinkedIn: <a href="#" className="text-indigo-600">linkedin.com/in/tuusuario</a></p>
